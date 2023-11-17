@@ -1,7 +1,4 @@
-from abc import ABC
-
-
-class Coordinate2D(ABC):
+class Coordinate2D:
     def __init__(self, x: float, y: float) -> None:
         self._x = x
         self._y = y

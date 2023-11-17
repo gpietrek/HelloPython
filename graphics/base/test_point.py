@@ -1,7 +1,7 @@
 from unittest import TestCase
 
-from graphics.point import Point
-from graphics.vector import Vector
+from graphics.base.point import Point
+from graphics.base.vector import Vector
 
 
 class TestPoint(TestCase):

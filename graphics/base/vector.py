@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from graphics.coordinate2d import Coordinate2D
+from graphics.base.coordinate2d import Coordinate2D
 
 
 class Vector(Coordinate2D):

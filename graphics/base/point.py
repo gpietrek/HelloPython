@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from graphics.coordinate2d import Coordinate2D
-from graphics.vector import Vector
+from graphics.base.coordinate2d import Coordinate2D
+from graphics.base.vector import Vector
 
 
 class Point(Coordinate2D):

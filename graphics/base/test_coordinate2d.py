@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from graphics.coordinate2d import Coordinate2D
+from graphics.base.coordinate2d import Coordinate2D
 
 
 class TestCoordinate2D(TestCase):
