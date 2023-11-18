@@ -2,6 +2,7 @@ from graphics.base.point import Point
 from graphics.base.vector import Vector
 from graphics.plot.plot import Plot
 from graphics.shape.rectangle import Rectangle
+from graphics.shape.square import Square
 from graphics.shape.triangle import Triangle
 
 
@@ -18,15 +19,18 @@ class Main:
 
         plot = Plot()
 
-        r = Rectangle(p, 2, 4)
-        r.plot(plot)
+        rectangle = Rectangle(p, 2, 4)
+        rectangle.plot(plot)
 
-        t = Triangle(
+        triangle = Triangle(
             Point(0, 5),
             Point(6, 5),
             Point(0, 10)
         )
-        t.plot(plot)
+        triangle.plot(plot)
+
+        square = Square(Point(3, 14), 6)
+        square.plot(plot)
 
         plot.show()
 
