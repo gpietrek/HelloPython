@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 
 from graphics.base.point import Point
+from graphics.plot.plot import Plot
 
 
 class Shape(ABC):
@@ -18,5 +19,5 @@ class Shape(ABC):
         pass
 
     @abstractmethod
-    def plot(self):
+    def plot(self, plot: Plot) -> None:
         pass

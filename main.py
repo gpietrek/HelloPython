@@ -1,5 +1,6 @@
 from graphics.base.point import Point
 from graphics.base.vector import Vector
+from graphics.plot.plot import Plot
 from graphics.shape.rectangle import Rectangle
 from graphics.shape.triangle import Triangle
 
@@ -15,15 +16,19 @@ class Main:
         print(f"p + v: {p + v}")
         print(f"v + v: {v + v}")
 
+        plot = Plot()
+
         r = Rectangle(p, 2, 4)
-        r.plot()
+        r.plot(plot)
 
         t = Triangle(
-            Point(0, 0),
-            Point(10, 0),
-            Point(0, 5)
+            Point(0, 5),
+            Point(6, 5),
+            Point(0, 10)
         )
-        t.plot()
+        t.plot(plot)
+
+        plot.show()
 
 
 if __name__ == '__main__':

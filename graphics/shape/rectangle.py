@@ -13,14 +13,12 @@ class Rectangle(Shape):
         self._p2 = Point(pos.get_x() + width / 2, pos.get_y() + height / 2)
         self._p3 = Point(pos.get_x() + width / 2, pos.get_y() - height / 2)
         self._p4 = Point(pos.get_x() - width / 2, pos.get_y() - height / 2)
-        self._plot = Plot()
 
     def calculate_area(self) -> float:
         return self._width * self._height
 
-    def plot(self):
-        self._plot.plot_line(self._p1, self._p2)
-        self._plot.plot_line(self._p2, self._p3)
-        self._plot.plot_line(self._p3, self._p4)
-        self._plot.plot_line(self._p4, self._p1)
-        self._plot.show()
+    def plot(self, plot: Plot) -> None:
+        plot.plot_line(self._p1, self._p2)
+        plot.plot_line(self._p2, self._p3)
+        plot.plot_line(self._p3, self._p4)
+        plot.plot_line(self._p4, self._p1)
