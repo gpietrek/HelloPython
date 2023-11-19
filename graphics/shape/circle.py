@@ -22,4 +22,4 @@ class Circle(Shape):
         return pi * self._radius ** 2
 
     def plot(self, plot: Plot) -> None:
-        plot.plot_line(self.get_center(), self.get_center())
+        plot.plot_circle(self.get_center(), self.get_radius())

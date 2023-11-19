@@ -30,6 +30,4 @@ class Triangle(Shape):
         ) / 2
 
     def plot(self, plot: Plot) -> None:
-        plot.plot_line(self._p1, self._p2)
-        plot.plot_line(self._p2, self._p3)
-        plot.plot_line(self._p3, self._p1)
+        plot.plot_triangle(self._p1, self._p2, self._p3)

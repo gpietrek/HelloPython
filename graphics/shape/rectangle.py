@@ -10,10 +10,10 @@ class Rectangle(Shape):
         super().__init__(pos)
         self._width = check_float_positive(width, 'width')
         self._height = check_float_positive(height, 'height')
-        self._p1 = Point(pos.get_x() - width / 2, pos.get_y() + height / 2)
-        self._p2 = Point(pos.get_x() + width / 2, pos.get_y() + height / 2)
-        self._p3 = Point(pos.get_x() + width / 2, pos.get_y() - height / 2)
-        self._p4 = Point(pos.get_x() - width / 2, pos.get_y() - height / 2)
+        self._p1 = Point(pos.get_x() - width / 2, pos.get_y() - height / 2)
+        self._p2 = Point(pos.get_x() + width / 2, pos.get_y() - height / 2)
+        self._p3 = Point(pos.get_x() + width / 2, pos.get_y() + height / 2)
+        self._p4 = Point(pos.get_x() - width / 2, pos.get_y() + height / 2)
 
     def get_width(self) -> float:
         return self._width
@@ -25,7 +25,4 @@ class Rectangle(Shape):
         return self._width * self._height
 
     def plot(self, plot: Plot) -> None:
-        plot.plot_line(self._p1, self._p2)
-        plot.plot_line(self._p2, self._p3)
-        plot.plot_line(self._p3, self._p4)
-        plot.plot_line(self._p4, self._p1)
+        plot.plot_rectangle(self._p1, self._width, self._height)
