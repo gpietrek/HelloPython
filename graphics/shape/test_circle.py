@@ -14,7 +14,6 @@ class TestCircle(TestCase):
     def test_init_fails_for_wrong_radius_type(self):
         # arrange
         radius = 'I am a string'
-        y = 42
 
         # act & assert
         with self.assertRaisesRegex(TypeError, 'radius can only be a float or int'):
