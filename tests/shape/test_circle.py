@@ -19,12 +19,20 @@ class TestCircle(TestCase):
         with self.assertRaisesRegex(TypeError, 'radius can only be a float or int'):
             Circle(self.center, radius)
 
+    def test_init_fails_for_negative_radius(self):
+        # arrange
+        radius = -4
+
+        # act & assert
+        with self.assertRaisesRegex(ValueError, 'radius must be greater than zero'):
+            Circle(self.center, radius)
+
     def test_get_center(self):
         # act
         result = self.cut.get_center()
 
         # assert
-        self.assertEqual(Point(1,2), result)
+        self.assertEqual(Point(1, 2), result)
 
     def test_get_radius(self):
         # act

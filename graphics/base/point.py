@@ -15,5 +15,4 @@ class Point(Coordinate2D):
     def __add__(self, other: Vector) -> Point:
         if not isinstance(other, Vector):
             raise TypeError("you can only add Vector to Point")
-        else:
-            return Point(self.get_x() + other.get_x(), self.get_y() + other.get_y())
+        return Point(self.get_x() + other.get_x(), self.get_y() + other.get_y())

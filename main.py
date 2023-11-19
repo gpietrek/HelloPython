@@ -24,7 +24,7 @@ class Main:
 
         triangle = Triangle(
             Point(0, 5),
-            Point(6, 5),
+            Point(17, 5),
             Point(0, 10)
         )
         triangle.plot(plot)

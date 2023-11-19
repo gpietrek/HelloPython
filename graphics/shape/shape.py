@@ -7,9 +7,8 @@ from graphics.plot.plot import Plot
 class Shape(ABC):
     def __init__(self, pos: Point) -> None:
         if not isinstance(pos, Point):
-            raise TypeError(f"pos can only be a Point")
-        else:
-            self._pos = pos
+            raise TypeError('pos can only be a Point')
+        self._pos = pos
 
     def get_pos(self) -> Point:
         return self._pos

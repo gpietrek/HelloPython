@@ -14,5 +14,4 @@ class Vector(Coordinate2D):
     def __add__(self, other) -> Vector:
         if not isinstance(other, Vector):
             raise TypeError("you can only add Vector to Vector")
-        else:
-            return Vector(self.get_x() + other.get_x(), self.get_y() + other.get_y())
+        return Vector(self.get_x() + other.get_x(), self.get_y() + other.get_y())
