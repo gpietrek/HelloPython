@@ -14,7 +14,7 @@ class TestVector(TestCase):
         result = str(self.cut)
 
         # assert
-        self.assertEqual("Vector(5,6)", result)
+        self.assertEqual("Vector(5.0,6.0)", result)
 
     def test_add_succeeds_for_vector(self):
         # act

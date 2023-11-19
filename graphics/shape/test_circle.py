@@ -8,7 +8,17 @@ from graphics.shape.circle import Circle
 class TestCircle(TestCase):
 
     def setUp(self):
-        self.cut = Circle(Point(1,2), 3)
+        self.center = Point(1, 2)
+        self.cut = Circle(self.center, 3)
+
+    def test_init_fails_for_wrong_radius_type(self):
+        # arrange
+        radius = 'I am a string'
+        y = 42
+
+        # act & assert
+        with self.assertRaisesRegex(TypeError, 'radius can only be a float or int'):
+            Circle(self.center, radius)
 
     def test_get_center(self):
         # act

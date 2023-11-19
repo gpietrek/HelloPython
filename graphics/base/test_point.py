@@ -14,7 +14,7 @@ class TestPoint(TestCase):
         result = str(self.cut)
 
         # assert
-        self.assertEqual("Point(2,3)", result)
+        self.assertEqual("Point(2.0,3.0)", result)
 
     def test_add_succeeds_for_vector(self):
         # arrange
