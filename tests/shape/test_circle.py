@@ -75,3 +75,10 @@ class TestCircle(TestCase):
 
         # assert
         plot.plot_circle.assert_called_once_with(Point(1, 2), 3, 'someColor')
+
+    def test_str(self):
+        # act
+        result = str(self.cut)
+
+        # assert
+        self.assertEqual("Circle(Point(1.0,2.0),3.0)", result)

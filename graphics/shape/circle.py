@@ -23,3 +23,6 @@ class Circle(Shape):
 
     def plot(self, plot: Plot, color: str = 'red') -> None:
         plot.plot_circle(self.get_center(), self.get_radius(), color)
+
+    def __str__(self) -> str:
+        return f"Circle({self.get_center()},{self.get_radius()})"

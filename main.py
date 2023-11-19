@@ -12,6 +12,7 @@ class Main:
 
         rectangle = Rectangle(Point(8, 2), 16, 4)
         rectangle.plot(plot, 'hotpink')
+        print(f"{rectangle} has area: {rectangle.calculate_area()}")
 
         triangle = Triangle(
             Point(0, 5),
@@ -19,12 +20,15 @@ class Main:
             Point(0, 10)
         )
         triangle.plot(plot, 'mediumorchid')
+        print(f"{triangle} has area: {triangle.calculate_area()}")
 
         square = Square(Point(3, 14), 6)
         square.plot(plot, 'magenta')
+        print(f"{square} has area: {square.calculate_area()}")
 
         circle = Circle(Point(12.5, 14), 3)
         circle.plot(plot, 'thistle')
+        print(f"{circle} has area: {circle.calculate_area()}")
 
         plot.show()
 

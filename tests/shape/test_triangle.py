@@ -70,3 +70,10 @@ class TestTriangle(TestCase):
 
         # assert
         plot.plot_triangle.assert_called_once_with(self.p1, self.p2, self.p3, 'someColor')
+
+    def test_str(self):
+        # act
+        result = str(self.cut)
+
+        # assert
+        self.assertEqual("Triangle(Point(0.0,0.0),Point(9.0,0.0),Point(0.0,6.0))", result)

@@ -31,3 +31,6 @@ class Triangle(Shape):
 
     def plot(self, plot: Plot, color: str = 'blue') -> None:
         plot.plot_triangle(self._p1, self._p2, self._p3, color)
+
+    def __str__(self) -> str:
+        return f"Triangle({self._p1},{self._p2},{self._p3})"

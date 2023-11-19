@@ -87,3 +87,10 @@ class TestRectangle(TestCase):
 
         # assert
         plot.plot_rectangle.assert_called_once_with(Point(-0.5, 0), 3, 4, 'someColor')
+
+    def test_str(self):
+        # act
+        result = str(self.cut)
+
+        # assert
+        self.assertEqual("Rectangle(Point(1.0,2.0),3.0,4.0)", result)

@@ -29,3 +29,10 @@ class TestSquare(TestCase):
 
         # assert
         self.assertEqual(9, result)
+
+    def test_str(self):
+        # act
+        result = str(self.cut)
+
+        # assert
+        self.assertEqual("Square(Point(1.0,2.0),3.0)", result)

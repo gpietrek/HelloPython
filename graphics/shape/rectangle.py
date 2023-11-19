@@ -26,3 +26,6 @@ class Rectangle(Shape):
 
     def plot(self, plot: Plot, color: str = 'green') -> None:
         plot.plot_rectangle(self._p1, self._width, self._height, color)
+
+    def __str__(self) -> str:
+        return f"Rectangle({self.get_pos()},{self.get_width()},{self.get_height()})"
