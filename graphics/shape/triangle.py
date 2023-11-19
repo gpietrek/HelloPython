@@ -29,5 +29,5 @@ class Triangle(Shape):
                 + self._p3.get_x() * (self._p1.get_y() - self._p2.get_y())
         ) / 2
 
-    def plot(self, plot: Plot) -> None:
-        plot.plot_triangle(self._p1, self._p2, self._p3)
+    def plot(self, plot: Plot, color: str = 'blue') -> None:
+        plot.plot_triangle(self._p1, self._p2, self._p3, color)

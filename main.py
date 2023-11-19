@@ -1,5 +1,4 @@
 from graphics.base.point import Point
-from graphics.base.vector import Vector
 from graphics.plot.plot import Plot
 from graphics.shape.circle import Circle
 from graphics.shape.rectangle import Rectangle
@@ -9,32 +8,23 @@ from graphics.shape.triangle import Triangle
 
 class Main:
     def run(self):
-        p = Point(1, 2)
-        print(f"p: {p}")
-
-        v = Vector(3, 4)
-        print(f"v: {v}")
-
-        print(f"p + v: {p + v}")
-        print(f"v + v: {v + v}")
-
         plot = Plot()
 
         rectangle = Rectangle(Point(8, 2), 16, 4)
-        rectangle.plot(plot)
+        rectangle.plot(plot, 'hotpink')
 
         triangle = Triangle(
             Point(0, 5),
-            Point(18, 5),
+            Point(16, 5),
             Point(0, 10)
         )
-        triangle.plot(plot)
+        triangle.plot(plot, 'mediumorchid')
 
         square = Square(Point(3, 14), 6)
-        square.plot(plot)
+        square.plot(plot, 'magenta')
 
-        circle = Circle(Point(15,15), 3)
-        circle.plot(plot)
+        circle = Circle(Point(12.5, 14), 3)
+        circle.plot(plot, 'thistle')
 
         plot.show()
 

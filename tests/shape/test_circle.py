@@ -1,5 +1,6 @@
 from math import isclose
 from unittest import TestCase
+from unittest.mock import Mock
 
 from graphics.base.point import Point
 from graphics.shape.circle import Circle
@@ -54,3 +55,23 @@ class TestCircle(TestCase):
 
         # assert
         self.assertEqual(28.274333882308139, result)
+
+    def test_plot(self):
+        # arrange
+        plot = Mock()
+
+        # act
+        self.cut.plot(plot)
+
+        # assert
+        plot.plot_circle.assert_called_once_with(Point(1, 2), 3, 'red')
+
+    def test_plot_with_color(self):
+        # arrange
+        plot = Mock()
+
+        # act
+        self.cut.plot(plot, 'someColor')
+
+        # assert
+        plot.plot_circle.assert_called_once_with(Point(1, 2), 3, 'someColor')

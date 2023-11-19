@@ -8,8 +8,8 @@ from graphics.shape.shape import Shape
 
 class Circle(Shape):
 
-    def __init__(self, pos: Point, radius: float) -> None:
-        super().__init__(pos)
+    def __init__(self, center: Point, radius: float) -> None:
+        super().__init__(center)
         self._radius = check_float_positive(radius, 'radius')
 
     def get_center(self) -> Point:
@@ -21,5 +21,5 @@ class Circle(Shape):
     def calculate_area(self) -> float:
         return pi * self._radius ** 2
 
-    def plot(self, plot: Plot) -> None:
-        plot.plot_circle(self.get_center(), self.get_radius())
+    def plot(self, plot: Plot, color: str = 'red') -> None:
+        plot.plot_circle(self.get_center(), self.get_radius(), color)

@@ -1,4 +1,5 @@
 from unittest import TestCase
+from unittest.mock import Mock
 
 from graphics.base.point import Point
 from graphics.shape.rectangle import Rectangle
@@ -66,3 +67,23 @@ class TestRectangle(TestCase):
 
         # assert
         self.assertEqual(12, result)
+
+    def test_plot(self):
+        # arrange
+        plot = Mock()
+
+        # act
+        self.cut.plot(plot)
+
+        # assert
+        plot.plot_rectangle.assert_called_once_with(Point(-0.5, 0), 3, 4, 'green')
+
+    def test_plot_with_color(self):
+        # arrange
+        plot = Mock()
+
+        # act
+        self.cut.plot(plot, 'someColor')
+
+        # assert
+        plot.plot_rectangle.assert_called_once_with(Point(-0.5, 0), 3, 4, 'someColor')

@@ -1,4 +1,5 @@
 from unittest import TestCase
+from unittest.mock import Mock
 
 from graphics.base.point import Point
 from graphics.shape.triangle import Triangle
@@ -49,3 +50,23 @@ class TestTriangle(TestCase):
 
         # assert
         self.assertEqual(27, result)
+
+    def test_plot(self):
+        # arrange
+        plot = Mock()
+
+        # act
+        self.cut.plot(plot)
+
+        # assert
+        plot.plot_triangle.assert_called_once_with(self.p1, self.p2, self.p3, 'blue')
+
+    def test_plot_with_color(self):
+        # arrange
+        plot = Mock()
+
+        # act
+        self.cut.plot(plot, 'someColor')
+
+        # assert
+        plot.plot_triangle.assert_called_once_with(self.p1, self.p2, self.p3, 'someColor')

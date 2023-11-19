@@ -24,5 +24,5 @@ class Rectangle(Shape):
     def calculate_area(self) -> float:
         return self._width * self._height
 
-    def plot(self, plot: Plot) -> None:
-        plot.plot_rectangle(self._p1, self._width, self._height)
+    def plot(self, plot: Plot, color: str = 'green') -> None:
+        plot.plot_rectangle(self._p1, self._width, self._height, color)
