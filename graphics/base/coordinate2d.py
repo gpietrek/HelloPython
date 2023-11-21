@@ -3,14 +3,29 @@
 # -----------------------------------------------------------------------------
 
 from graphics.base.util import check_float
-from typing_extensions import Self
+try:
+    #
+    #Importiert den Typ "Self".
+    #
+    from typing import Self
+except ImportError:
+    #
+    #Da Self ab 3.11 erst verfuegbar ist,
+    #gibt es hier eine eigene abwaertkompatible Definition.
+    #
+    Self = 'Self'
 
 # -----------------------------------------------------------------------------
 
 class Coordinate2D:
     """Die Implementierung einer 2-dimensionalen Koordinate."""
+
+    def __del__(self):
+        """Ein Leerer Destructor."""
+        pass
+
     def __init__(self, x: float, y: float) -> None:
-        """C'tor.
+        """Constructor.
 
         Args:
             x: float: X-Koordinate.
@@ -73,7 +88,7 @@ class Coordinate2D:
             bool: Berechnet: (self.x == other.x) and (self.y == other.y)
         """
         if isinstance(other, self.__class__):
-            return self.get_x() == other.get_x() and self.get_y() == other.get_y()
+            return (self.get_x() == other.get_x()) and (self.get_y() == other.get_y())
         else:
             return False
 
@@ -89,6 +104,6 @@ class Coordinate2D:
             bool: Berechnet: !(self == other)
         """
         return not self.__eq__(other)
-
+    
     pass
 # -----------------------------------------------------------------------------
