@@ -6,14 +6,14 @@ from graphics.shape.shape import Shape
 
 class Rectangle(Shape):
 
-    def __init__(self, pos: Point, width: float, height: float) -> None:
-        super().__init__(pos)
+    def __init__(self, width: float, height: float, **kw) -> None:
+        super(Rectangle, self).__init__(**kw)
         self._width = check_float_positive(width, 'width')
         self._height = check_float_positive(height, 'height')
-        self._p1 = Point(pos.get_x() - width / 2, pos.get_y() - height / 2)
-        self._p2 = Point(pos.get_x() + width / 2, pos.get_y() - height / 2)
-        self._p3 = Point(pos.get_x() + width / 2, pos.get_y() + height / 2)
-        self._p4 = Point(pos.get_x() - width / 2, pos.get_y() + height / 2)
+        self._p1 = Point(self.get_pos().get_x() - width / 2, self.get_pos().get_y() - height / 2)
+        self._p2 = Point(self.get_pos().get_x() + width / 2, self.get_pos().get_y() - height / 2)
+        self._p3 = Point(self.get_pos().get_x() + width / 2, self.get_pos().get_y() + height / 2)
+        self._p4 = Point(self.get_pos().get_x() - width / 2, self.get_pos().get_y() + height / 2)
 
     def get_width(self) -> float:
         return self._width
