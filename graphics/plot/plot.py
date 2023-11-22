@@ -8,8 +8,8 @@ class Plot:
 
     def __init__(self):
         self._fig, self._ax = plt.subplots()
-        self._ax.set_xlim(-1, 20)
-        self._ax.set_ylim(-1, 20)
+        self._ax.set_xlim(-1, 24)
+        self._ax.set_ylim(-1, 24)
         plt.axis('square')
 
     def plot_line(self, p1: Point, p2: Point) -> None:

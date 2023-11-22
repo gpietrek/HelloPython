@@ -11,7 +11,7 @@ class Main:
     def run(self):
         plot = Plot()
 
-        rectangle = Rectangle(16, 4, pos = Point(8,2))
+        rectangle = Rectangle(Point(8, 2), 16, 4)
         rectangle.plot(plot, 'hotpink')
         print(f"{rectangle} has area: {rectangle.calculate_area()}")
 
@@ -27,11 +27,11 @@ class Main:
         square.plot(plot, 'magenta')
         print(f"{square} has area: {square.calculate_area()}")
 
-        circle = Circle(3, pos=Point(12.5, 14))
+        circle = Circle(Point(12.5, 14), 3)
         circle.plot(plot, 'thistle')
         print(f"{circle} has area: {circle.calculate_area()}")
 
-        oval = Oval(Point(8, 20), 16, 4)
+        oval = Oval(Point(8, 20), 12, 4)
         oval.plot(plot)
         print(f"{oval} has area: {oval.calculate_area()}")
 

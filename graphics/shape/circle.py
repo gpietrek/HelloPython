@@ -8,12 +8,9 @@ from graphics.shape.shape import Shape
 
 class Circle(Shape):
 
-    def __init__(self, radius: float, **kw) -> None:
-        super(Circle, self).__init__(**kw)
+    def __init__(self, center: Point, radius: float) -> None:
+        super().__init__(center)
         self._radius = check_float_positive(radius, 'radius')
-
-    def get_center(self) -> Point:
-        return self.get_pos()
 
     def get_radius(self) -> float:
         return self._radius

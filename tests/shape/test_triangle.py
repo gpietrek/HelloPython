@@ -39,7 +39,7 @@ class TestTriangle(TestCase):
 
     def test_get_pos(self):
         # act
-        result = self.cut.get_pos()
+        result = self.cut.get_center()
 
         # assert
         self.assertEqual(Point(3, 2), result)

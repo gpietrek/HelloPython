@@ -21,7 +21,7 @@ class TestShape(TestCase):
         cut = Circle(Point(1, 2), 3)
 
         # act
-        result = cut.get_pos()
+        result = cut.get_center()
 
         # assert
         self.assertEqual(Point(1, 2), result)
