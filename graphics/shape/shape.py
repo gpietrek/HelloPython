@@ -7,11 +7,11 @@ from graphics.plot.plot import Plot
 class Shape(ABC):
     def __init__(self, center: Point) -> None:
         if not isinstance(center, Point):
-            raise TypeError('pos can only be a Point')
-        self._pos = center
+            raise TypeError('center can only be a Point')
+        self._center = center
 
     def get_center(self) -> Point:
-        return self._pos
+        return self._center
 
     @abstractmethod
     def calculate_area(self) -> float:

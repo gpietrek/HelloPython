@@ -37,7 +37,7 @@ class TestTriangle(TestCase):
         with self.assertRaisesRegex(TypeError, 'p3 can only be a Point'):
             Triangle(self.p1, self.p2, p3)
 
-    def test_get_pos(self):
+    def test_get_center(self):
         # act
         result = self.cut.get_center()
 

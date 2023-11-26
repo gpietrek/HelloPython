@@ -8,8 +8,8 @@ from graphics.shape.rectangle import Rectangle
 class TestRectangle(TestCase):
 
     def setUp(self):
-        self.pos = Point(1, 2)
-        self.cut = Rectangle(self.pos, 3, 4)
+        self.center = Point(1, 2)
+        self.cut = Rectangle(self.center, 3, 4)
 
     def test_init_fails_for_wrong_width_type(self):
         # arrange
@@ -18,7 +18,7 @@ class TestRectangle(TestCase):
 
         # act & assert
         with self.assertRaisesRegex(TypeError, 'width can only be a float or int'):
-            Rectangle(self.pos, width, height)
+            Rectangle(self.center, width, height)
 
     def test_init_fails_for_negative_width(self):
         # arrange
@@ -27,7 +27,7 @@ class TestRectangle(TestCase):
 
         # act & assert
         with self.assertRaisesRegex(ValueError, 'width must be greater than zero'):
-            Rectangle(self.pos, width, height)
+            Rectangle(self.center, width, height)
 
     def test_init_fails_for_wrong_height_type(self):
         # arrange
@@ -36,7 +36,7 @@ class TestRectangle(TestCase):
 
         # act & assert
         with self.assertRaisesRegex(TypeError, 'height can only be a float or int'):
-            Rectangle(self.pos, width, height)
+            Rectangle(self.center, width, height)
 
     def test_init_fails_for_negative_height(self):
         # arrange
@@ -45,7 +45,7 @@ class TestRectangle(TestCase):
 
         # act & assert
         with self.assertRaisesRegex(ValueError, 'height must be greater than zero'):
-            Rectangle(self.pos, width, height)
+            Rectangle(self.center, width, height)
 
     def test_get_width(self):
         # act

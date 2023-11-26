@@ -8,15 +8,15 @@ from graphics.shape.circle import Circle
 # we use the concrete subclass Circle to test it
 class TestShape(TestCase):
 
-    def test_init_fails_for_wrong_pos_type(self):
+    def test_init_fails_for_wrong_center_type(self):
         # arrange
-        pos = 'I am a string'
+        center = 'I am a string'
 
         # act & assert
-        with self.assertRaisesRegex(TypeError, 'pos can only be a Point'):
-            Circle(pos, 3)
+        with self.assertRaisesRegex(TypeError, 'center can only be a Point'):
+            Circle(center, 3)
 
-    def test_get_pos(self):
+    def test_get_center(self):
         # arrange
         cut = Circle(Point(1, 2), 3)
 
