@@ -11,7 +11,7 @@ class TestTriangle(TestCase):
         self.p1 = Point(0, 0)
         self.p2 = Point(9, 0)
         self.p3 = Point(0, 6)
-        self.cut = Triangle(self.p1, self.p2, self.p3)
+        self.cut = Triangle(p1=self.p1, p2=self.p2, p3=self.p3)
 
     def test_init_fails_for_wrong_p1_type(self):
         # arrange
@@ -19,7 +19,7 @@ class TestTriangle(TestCase):
 
         # act & assert
         with self.assertRaisesRegex(TypeError, 'p1 can only be a Point'):
-            Triangle(p1, self.p2, self.p3)
+            Triangle(p1=p1, p2=self.p2, p3=self.p3)
 
     def test_init_fails_for_wrong_p2_type(self):
         # arrange
@@ -27,7 +27,7 @@ class TestTriangle(TestCase):
 
         # act & assert
         with self.assertRaisesRegex(TypeError, 'p2 can only be a Point'):
-            Triangle(self.p1, p2, self.p3)
+            Triangle(p1=self.p1, p2=p2, p3=self.p3)
 
     def test_init_fails_for_wrong_p3_type(self):
         # arrange
@@ -35,7 +35,7 @@ class TestTriangle(TestCase):
 
         # act & assert
         with self.assertRaisesRegex(TypeError, 'p3 can only be a Point'):
-            Triangle(self.p1, self.p2, p3)
+            Triangle(p1=self.p1, p2=self.p2, p3=p3)
 
     def test_get_center(self):
         # act

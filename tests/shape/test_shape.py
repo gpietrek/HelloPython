@@ -14,11 +14,11 @@ class TestShape(TestCase):
 
         # act & assert
         with self.assertRaisesRegex(TypeError, 'center can only be a Point'):
-            Circle(center, 3)
+            Circle(center=center, radius=3)
 
     def test_get_center(self):
         # arrange
-        cut = Circle(Point(1, 2), 3)
+        cut = Circle(center=Point(1, 2), radius=3)
 
         # act
         result = cut.get_center()

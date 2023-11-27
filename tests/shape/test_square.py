@@ -7,7 +7,7 @@ from graphics.shape.square import Square
 class TestSquare(TestCase):
 
     def setUp(self):
-        self.cut = Square(Point(1, 2), 3)
+        self.cut = Square(center=Point(1, 2), width=3)
 
     def test_get_width(self):
         # act

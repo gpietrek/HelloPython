@@ -6,8 +6,8 @@ from graphics.shape.shape import Shape
 
 class Rectangle(Shape):
 
-    def __init__(self, center: Point, width: float, height: float) -> None:
-        Shape.__init__(self, center)
+    def __init__(self, *, width: float, height: float, **kw) -> None:
+        super().__init__(**kw)
         self._width = check_float_positive(width, 'width')
         self._height = check_float_positive(height, 'height')
         self._p1 = Point(self.get_center().get_x() - width / 2, self.get_center().get_y() - height / 2)

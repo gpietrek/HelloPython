@@ -1,6 +1,5 @@
 from math import pi
 
-from graphics.base.point import Point
 from graphics.base.util import check_float_positive
 from graphics.plot.plot import Plot
 from graphics.shape.shape import Shape
@@ -8,8 +7,8 @@ from graphics.shape.shape import Shape
 
 class Circle(Shape):
 
-    def __init__(self, center: Point, radius: float) -> None:
-        super().__init__(center)
+    def __init__(self, *, radius: float, **kwargs) -> None:
+        super().__init__(**kwargs)
         self._radius = check_float_positive(radius, 'radius')
 
     def get_radius(self) -> float:
