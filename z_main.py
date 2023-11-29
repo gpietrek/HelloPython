@@ -1,4 +1,3 @@
-
 from circle import Circle
 from point import Point
 from rectangle import Rectangle

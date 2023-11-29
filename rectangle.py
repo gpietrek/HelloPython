@@ -4,10 +4,10 @@ from shape import Shape
 
 class Rectangle(Shape):
 
-    def __init__(self, p:Point, a, b):
+    def __init__(self, p:Point, width, length):
         super().__init__(p)
-        self._width = a
-        self._length = b
+        self._width = width
+        self._length = length
 
     def getWidth(self):
         return self._width
