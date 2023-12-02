@@ -1,4 +1,5 @@
 from graphics.base.point import Point
+from graphics.base.util import check_type
 from graphics.plot.plot import Plot
 from graphics.shape.shape import Shape
 
@@ -6,12 +7,9 @@ from graphics.shape.shape import Shape
 class Triangle(Shape):
 
     def __init__(self, *, p1: Point, p2: Point, p3: Point, **kwargs) -> None:
-        if not isinstance(p1, Point):
-            raise TypeError('p1 can only be a Point')
-        if not isinstance(p2, Point):
-            raise TypeError('p2 can only be a Point')
-        if not isinstance(p3, Point):
-            raise TypeError('p3 can only be a Point')
+        self._p1 = check_type(p1, Point, 'p1')
+        self._p2 = check_type(p2, Point, 'p2')
+        self._p3 = check_type(p3, Point, 'p3')
         super().__init__(
             center=Point(
                 (p1.get_x() + p2.get_x() + p3.get_x()) / 3,
@@ -19,9 +17,6 @@ class Triangle(Shape):
             ),
             **kwargs
         )
-        self._p1 = p1
-        self._p2 = p2
-        self._p3 = p3
 
     def calculate_area(self) -> float:
         return (

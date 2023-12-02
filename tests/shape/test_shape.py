@@ -13,7 +13,7 @@ class TestShape(TestCase):
         center = 'I am a string'
 
         # act & assert
-        with self.assertRaisesRegex(TypeError, 'center can only be a Point'):
+        with self.assertRaisesRegex(TypeError, '^center can only be a Point$'):
             Circle(center=center, radius=3)
 
     def test_get_center(self):

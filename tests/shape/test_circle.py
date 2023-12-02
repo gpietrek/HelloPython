@@ -17,7 +17,7 @@ class TestCircle(TestCase):
         radius = 'I am a string'
 
         # act & assert
-        with self.assertRaisesRegex(TypeError, 'radius can only be a float or int'):
+        with self.assertRaisesRegex(TypeError, '^radius can only be a float or int$'):
             Circle(center=self.center, radius=radius)
 
     def test_init_fails_for_negative_radius(self):
@@ -25,7 +25,7 @@ class TestCircle(TestCase):
         radius = -4
 
         # act & assert
-        with self.assertRaisesRegex(ValueError, 'radius must be greater than zero'):
+        with self.assertRaisesRegex(ValueError, '^radius must be greater than zero$'):
             Circle(center=self.center, radius=radius)
 
     def test_get_center(self):

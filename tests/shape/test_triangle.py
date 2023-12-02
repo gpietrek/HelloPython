@@ -18,7 +18,7 @@ class TestTriangle(TestCase):
         p1 = 'I am a string'
 
         # act & assert
-        with self.assertRaisesRegex(TypeError, 'p1 can only be a Point'):
+        with self.assertRaisesRegex(TypeError, '^p1 can only be a Point$'):
             Triangle(p1=p1, p2=self.p2, p3=self.p3)
 
     def test_init_fails_for_wrong_p2_type(self):
@@ -26,7 +26,7 @@ class TestTriangle(TestCase):
         p2 = 'I am a string'
 
         # act & assert
-        with self.assertRaisesRegex(TypeError, 'p2 can only be a Point'):
+        with self.assertRaisesRegex(TypeError, '^p2 can only be a Point$'):
             Triangle(p1=self.p1, p2=p2, p3=self.p3)
 
     def test_init_fails_for_wrong_p3_type(self):
@@ -34,7 +34,7 @@ class TestTriangle(TestCase):
         p3 = 'I am a string'
 
         # act & assert
-        with self.assertRaisesRegex(TypeError, 'p3 can only be a Point'):
+        with self.assertRaisesRegex(TypeError, '^p3 can only be a Point$'):
             Triangle(p1=self.p1, p2=self.p2, p3=p3)
 
     def test_get_center(self):

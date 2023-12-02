@@ -17,7 +17,7 @@ class TestRectangle(TestCase):
         height = 4
 
         # act & assert
-        with self.assertRaisesRegex(TypeError, 'width can only be a float or int'):
+        with self.assertRaisesRegex(TypeError, '^width can only be a float or int$'):
             Rectangle(center=self.center, width=width, height=height)
 
     def test_init_fails_for_negative_width(self):
@@ -26,7 +26,7 @@ class TestRectangle(TestCase):
         height = 4
 
         # act & assert
-        with self.assertRaisesRegex(ValueError, 'width must be greater than zero'):
+        with self.assertRaisesRegex(ValueError, '^width must be greater than zero$'):
             Rectangle(center=self.center, width=width, height=height)
 
     def test_init_fails_for_wrong_height_type(self):
@@ -35,7 +35,7 @@ class TestRectangle(TestCase):
         height = 'I am a string'
 
         # act & assert
-        with self.assertRaisesRegex(TypeError, 'height can only be a float or int'):
+        with self.assertRaisesRegex(TypeError, '^height can only be a float or int$'):
             Rectangle(center=self.center, width=width, height=height)
 
     def test_init_fails_for_negative_height(self):
@@ -44,7 +44,7 @@ class TestRectangle(TestCase):
         height = -4
 
         # act & assert
-        with self.assertRaisesRegex(ValueError, 'height must be greater than zero'):
+        with self.assertRaisesRegex(ValueError, '^height must be greater than zero$'):
             Rectangle(center=self.center, width=width, height=height)
 
     def test_get_width(self):
