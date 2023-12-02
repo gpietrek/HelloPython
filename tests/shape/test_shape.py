@@ -1,11 +1,22 @@
 from unittest import TestCase
 
 from graphics.base.point import Point
-from graphics.shape.circle import Circle
+from graphics.plot.plot import Plot
+from graphics.shape.shape import Shape
 
 
-# since Shape is abstract, we cannot test it directly, because we cannot instantiate it
-# we use the concrete subclass Circle to test it
+class ShapeForTest(Shape):
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+    def calculate_area(self) -> float:
+        pass
+
+    def plot(self, plot: Plot) -> None:
+        pass
+
+
 class TestShape(TestCase):
 
     def test_init_fails_for_wrong_center_type(self):
@@ -14,11 +25,11 @@ class TestShape(TestCase):
 
         # act & assert
         with self.assertRaisesRegex(TypeError, '^center can only be a Point$'):
-            Circle(center=center, radius=3)
+            ShapeForTest(center=center)
 
     def test_get_center(self):
         # arrange
-        cut = Circle(center=Point(1, 2), radius=3)
+        cut = ShapeForTest(center=Point(1, 2))
 
         # act
         result = cut.get_center()
