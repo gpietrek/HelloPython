@@ -6,8 +6,9 @@ from graphics.shape.rectangle import Rectangle
 
 class Oval(Rectangle, Circle):
 
-    def __init__(self, *, width: float, height: float, **kwargs) -> None:
-        super().__init__(width=width, height=height, radius=height / 2, **kwargs)
+    def __init__(self, center: Point, width: float, height: float) -> None:
+        Rectangle.__init__(self, center, width, height)
+        Circle.__init__(self, center, height / 2)
 
     def calculate_area(self) -> float:
         return Rectangle.calculate_area(self) + Circle.calculate_area(self)

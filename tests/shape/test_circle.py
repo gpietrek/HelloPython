@@ -10,7 +10,7 @@ class TestCircle(TestCase):
 
     def setUp(self):
         self.center = Point(1, 2)
-        self.cut = Circle(center=self.center, radius=3)
+        self.cut = Circle(self.center, 3)
 
     def test_init_fails_for_wrong_radius_type(self):
         # arrange
@@ -18,7 +18,7 @@ class TestCircle(TestCase):
 
         # act & assert
         with self.assertRaisesRegex(TypeError, '^radius can only be a float or int$'):
-            Circle(center=self.center, radius=radius)
+            Circle(self.center, radius)
 
     def test_init_fails_for_negative_radius(self):
         # arrange
@@ -26,7 +26,7 @@ class TestCircle(TestCase):
 
         # act & assert
         with self.assertRaisesRegex(ValueError, '^radius must be greater than zero$'):
-            Circle(center=self.center, radius=radius)
+            Circle(self.center, radius)
 
     def test_get_center(self):
         # act
