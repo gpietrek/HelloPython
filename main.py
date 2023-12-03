@@ -32,7 +32,7 @@ class Main:
         print(f"{circle} has area: {circle.calculate_area()}")
 
         oval = Oval(center = Point(8, 20), width=12, height=4)
-        oval.plot(plot)
+        oval.plot(plot, 'mediumvioletred')
         print(f"{oval} has area: {oval.calculate_area()}")
 
         plot.show()
